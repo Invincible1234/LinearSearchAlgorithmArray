@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int linearSeach(int numbers[], int numberSize, int target){
+  int i;
+  for(i = 0; i < numberSize; i++){
+    if(numbers[i] == target){
+      return i;
+    }
+  }
+  return -1;
+}
+
+int main(){
+  int numbers[] = {8, 15, 27, 97, 34, 14, 13, 9};
+  const int NUMBER_SIZE = 8;
+  int keyTarget;
+  int keyFunctions;
+
+
+  for(int i = 0; i < NUMBER_SIZE; i++){
+    cout << numbers[i] << " ";
+  }
+  cout << endl;
+
+  cout << "Enter the value that you need to find: ";
+  cin >> keyTarget;
+
+  keyFunctions = linearSeach(numbers, NUMBER_SIZE, keyTarget);
+
+  if(keyFunctions == -1){
+    cout << "Couldn't find the desired the target number." << endl;
+  }
+  else{
+    cout << keyTarget << " is at index " << keyFunctions << ".";
+  }
+  
+}
